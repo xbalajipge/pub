@@ -1,3 +1,4 @@
+# simple power shell script to be sourced
 echo "powershell script to execute"
 echo "curl -skLq <url-to-this-file> | powershell.exe"
 
