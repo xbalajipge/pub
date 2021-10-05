@@ -1,0 +1,10 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Installer]
+@="0"
+"DisableMSI"=dword:00000000
+"AlwaysInstallElevated"=dword:00000001
+
+[HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Installer]
+@="0"
+"AlwaysInstallElevated"=dword:00000001
