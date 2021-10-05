@@ -9,8 +9,8 @@ set USR_DNLD=%HOME%\Downloads
 set ARCGIS_DNLD=%HOME%\ArcGIS_Download
 
 REM download 7zip
-curl -skLq https://www.7-zip.org/a/7z1900-x64.exe -o %HOME%\7zip.exe
-start /wait %HOME%\7zip.exe /S
+curl -skLq https://www.7-zip.org/a/7z1900-x64.exe -o %USR_DNLD%\7zip.exe
+start /wait %USR_DNLD%\7zip.exe /S
 
 REM echo "list directory"
 REM aws s3 ls s3://geomartcloud-installer/esri/arcgis_pro_2_8/
@@ -31,3 +31,6 @@ aws s3 cp s3://geomartcloud-installer/esri/arcgis_pro_2_8/ArcGISPro_28_177688.ex
 aws s3 cp s3://geomartcloud-installer/esri/arcgis_pro_2_8/patches/ArcGIS_Pro_281_177644.msp %ARCGIS_DNLD%
 
 dir %ARCGIS_DNLD%
+
+REM extract ARCGIS pro
+"C:\Program Files\7-Zip\7z.exe" x %ARCGIS_DNLD%\ArcGISPro_28_177688.exe -y > arcgis-install-log.txt
