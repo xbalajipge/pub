@@ -6,6 +6,10 @@ echo "curl -skLq https://raw.githubusercontent.com/xbalajipge/pub/main/init.ps1 
 $env:AWS_DEFAULT_PROFILE = 'appstream_machine_role'
 $env:ARCGIS_DNLD_DIR = 'C:\Users\ImageBuilderAdmin\ArcGIS_Download'
 
+# download 7zip
+curl -skLq https://www.7-zip.org/a/7z1900-x64.exe -o Downloads\7zip.exe
+start /wait Downloads\7zip.exe /S
+
 #echo "list directory"
 #aws s3 ls s3://geomartcloud-installer/esri/arcgis_pro_2_8/
 #echo "list executable"
