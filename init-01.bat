@@ -33,4 +33,7 @@ aws s3 cp s3://geomartcloud-installer/esri/arcgis_pro_2_8/patches/ArcGIS_Pro_281
 dir %ARCGIS_DNLD%
 
 REM extract ARCGIS pro
-"C:\Program Files\7-Zip\7z.exe" x %ARCGIS_DNLD%\ArcGISPro_28_177688.exe -y > arcgis-install-log.txt
+"C:\Program Files\7-Zip\7z.exe" x %ARCGIS_DNLD%\ArcGISPro_28_177688.exe -y > arcgispro-extract-log.txt
+
+REM now install ARCGIS
+msiexec.exe /i ArcGISPro\ArcGISPro.msi /qn INSTALLDIR="C:\arcgis\pro" ALLUSERS=1 ESRI_LICENSE_HOST="@10.90.108.229;@10.90.108.125" SOFTWARE_CLASS=Professional AUTHORIZATION_TYPE=CONCURRENT_USE "/l* arcgispro-install-log.txt" -Wait -PassThru
