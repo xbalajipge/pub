@@ -8,6 +8,8 @@ set HOME=C:\Users\ImageBuilderAdmin
 set USR_DNLD=%HOME%\Downloads
 set ARCGIS_DNLD=%HOME%\ArcGIS_Download
 
+cd %HOME%
+
 REM download 7zip
 curl -skLq https://www.7-zip.org/a/7z1900-x64.exe -o %USR_DNLD%\7zip.exe
 start /wait %USR_DNLD%\7zip.exe /S
@@ -36,4 +38,5 @@ REM extract ARCGIS pro
 "C:\Program Files\7-Zip\7z.exe" x %ARCGIS_DNLD%\ArcGISPro_28_177688.exe -y > arcgispro-extract-log.txt
 
 REM now install ARCGIS
-msiexec.exe /i ArcGISPro\ArcGISPro.msi /qn INSTALLDIR="C:\arcgis\pro" ALLUSERS=1 ESRI_LICENSE_HOST="@10.90.108.229;@10.90.108.125" SOFTWARE_CLASS=Professional AUTHORIZATION_TYPE=CONCURRENT_USE "/l* arcgispro-install-log.txt" -Wait -PassThru
+DEL arcgispro-install-log.txt
+C:\Windows\System32\msiexec.exe /i ArcGISPro\ArcGISPro.msi /quiet /qn /l*vx arcgispro-install-log.txt INSTALLDIR="C:\arcgis\pro" ALLUSERS=1 ENABLEEUI=0 ACCEPTEULA=yes ESRI_LICENSE_HOST="@10.90.108.229;@10.90.108.125" SOFTWARE_CLASS=Professional AUTHORIZATION_TYPE=CONCURRENT_USE
