@@ -44,7 +44,7 @@ REM extract ARCGIS pro
 
 REM now install ARCGIS
 DEL arcgispro-install-log.txt
-C:\Windows\System32\msiexec.exe /i ArcGISPro\ArcGISPro.msi /quiet /qn /l*vx arcgispro-install-log.txt INSTALLDIR="C:\arcgis\pro" ALLUSERS=1 ENABLEEUI=0 ACCEPTEULA=yes ESRI_LICENSE_HOST="@10.90.108.229;@10.90.108.125" SOFTWARE_CLASS=Professional AUTHORIZATION_TYPE=CONCURRENT_USE
+C:\Windows\System32\msiexec.exe /i ArcGISPro\ArcGISPro.msi /quiet /qn /l*vx arcgispro-install-log.txt INSTALLDIR="C:\arcgis\pro" ALLUSERS=1 ENABLEEUI=0 ACCEPTEULA=yes ESRI_LICENSE_HOST="@10.90.108.229@29001;@10.90.108.125@29001" SOFTWARE_CLASS=Professional AUTHORIZATION_TYPE=CONCURRENT_USE
 
 REM now install the patches
 DEL arcgispro-patch-log.txt
